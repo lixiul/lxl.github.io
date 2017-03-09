@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, minimum-scale=1, maximum-scale=1, initial-scale=1">
+    <title>慢慢买首页</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="x5-fullscreen" content="true">
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <meta name="full-screen" content="yes">
+    <!--第三方的样式-->
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+    <!--引用公共的样式-->
+    <link rel="stylesheet" href="./less/common.css">
+    <!--引用自己的样式-->
+    <link rel="stylesheet" href="./less/index.css"/>
+    <link rel="stylesheet" href="./less/brand.css">
+
+
+</head>
+<body ng-app="">
+<!--头部-->
+<div ng-include="'./html/commom/header.html'"></div>
+
+<!--搜索框-->
+<div ng-include="'./html/commom/search_input.html'"></div>
+
+<!--首页菜单栏-->
+<nav class="index_nav container clearfix">
+    <div class="row clearfix">
+
+    </div>
+</nav>
+
+<!--首页主体内容-->
+<section class="index_main">
+    <!--超值折扣推荐-->
+    <div class="title_com">
+        <a href="./html/s_discout.html">超值折扣推荐  <i class="icon fr"></i></a>
+    </div>
+
+    <!--首页产品列表-->
+    <div class="product_list container">
+        <ul>
+        </ul>
+    </div>
+
+
+    <!--更多优惠信息-->
+    <div class="index_more container">
+        <a href="./html/s_discout.html">更多优惠信息 »</a>
+    </div>
+
+    <!--超值折扣推荐-->
+    <div class="title_com">
+        <a href="./html/brand.html">品牌排行  <i class="icon fr"></i></a>
+    </div>
+</section>
+
+<!--底部-->
+<div ng-include="'./html/commom/footer.html'"></div>
+<!--下载慢慢买app入口-->
+<div ng-include="'./html/commom/app_download_icon.html'"></div>
+<div ng-include="'./html/commom/ajax_loading.html'"></div>
+
+</body>
+
+<script src="./lib/requirejs/require.min.js" data-main='./js/common/main.js'></script>
+<!--菜单模版-->
+<script type="text/template" id="menu_tpl">
+    {{each list as navList}}
+    <div class="col-xs-3">
+        <a href="{{navList.titlehref}}">
+            {{#navList.img}}
+            <p>{{navList.name}}</p>
+        </a>
+    </div>
+    {{/each}}
+</script>
+
+<!--首页产品列表-->
+<script type="text/template" id="product_list">
+    {{each list as product}}
+    <li class="col-xs-12 clearfix">
+        <a href="./html/list_details.html?productId={{product.productId}}">
+            <div class="pic fl">{{#product.productImg2}}</div>
+            <div class="info clearfix">
+                <div class="title">
+                    <h3>{{product.productName}}</h3>
+                    <p class="price">价格信息：<span>{{product.productPinkage}}</span></p>
+                </div>
+                <div class="other clearfix">
+                    <div class="mallbox fl">
+                        <span class="mall">{{product.productFrom}}</span> |
+                        <span class="date">{{product.productTime}}</span>
+                    </div>
+                    <div class="evaluate fr">
+                        <i class="icon fl"></i>
+                        <span class="count"> {{getNum(product.productComCount)}}</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </li>
+    {{/each}}
+</script>
+
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, minimum-scale=1, maximum-scale=1, initial-scale=1">
+    <title>比价购买详情页</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="x5-fullscreen" content="true">
+    <link rel="shortcut icon" href="../favicon.ico"/>
+    <meta name="full-screen" content="yes">
+    <!--第三方的样式-->
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <!--引用公共的样式-->
+    <link rel="stylesheet" href="../less/common.css">
+    <!--底部顶部样式-->
+    <link rel="stylesheet" href="../less/brand.css">
+    <!--引用自己的样式-->
+    <link rel="stylesheet" href="../less/brand.css"/>
+    <link rel="stylesheet" href="../less/bijia_details.css"/>
+
+</head>
+<body style="padding-bottom: 60px;" ng-app="">
+<!--头部-->
+<div ng-include="'commom/header.html'"></div>
+
+<!--搜索框-->
+<section class="search_box">
+    <form action="">
+        <div class="input_box">
+            <input style="background: #fff" type="text" placeholder="输入你想比价的商品"/>
+            <button type="submit" class='search_btn'>搜索</button>
+        </div>
+    </form>
+</section>
+<style type="text/css">
+    .search_box .input_box > input{
+        background-color: #fff;
+    }
+
+</style>
+<!--当前位置-->
+<p class="current_position"><span>首页</span>&nbsp;>&nbsp; <span>品牌大全</span></p>
+<!--详细页-->
+<div class='details-p'>
+    <!--详细页的坑-->
+</div>
+
+
+<!--网友评价-->
+<div class="evaluate">
+    <h1 class="evaluate_Top">
+        网友评价
+    </h1>
+    <div class="Appraise">
+            <!--评论坑-->
+    </div>
+
+    <!--查找更多评论-->
+    <div class="More">
+        <a href="javascript:;">查找更多评价</a>
+    </div>
+</div>
+
+
+<!--底部-->
+<div ng-include="'commom/footer.html'"></div>
+
+<!--下载慢慢买app入口-->
+<div ng-include="'commom/app_entrance.html'"></div>
+
+<!--详细页-->
+<script type="text/template" id='details-tpl'>
+    {{each list}}
+    <div class="details">
+        <div class="container" ;>
+            <div class="col-xs-12 details_Img ">
+                {{#$value.productImg}}
+                <img src="../imgs/ljb/sc.jpg" alt=""/>
+            </div>
+            <p>{{$value.productName}}</p>
+
+            <div class="row details_Price">
+                <div class="col-xs-6">
+                    <span>最低价：</span>
+                    <i>¥1149.00</i>
+                </div>
+                <div class="col-xs-6">
+                    <span>最低来自：</span>
+                    <em class='body_a'>京东商城</em>
+                </div>
+                <div class="col-xs-6">
+                    <span>全网评论：</span>
+                    <em>315048条</em>
+                </div>
+                <div class="col-xs-6">
+                    <span>优选评论：</span>
+                    <em>5188条</em>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--比价购买-->
+    <div class="nav container">
+        <div class="tabs row">
+            <div class="col-xs-4" style="background-color:#ff9000">
+                <a href="#">比价购买</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="#">产品参数</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="#">优选评论</a>
+            </div>
+        </div>
+        <div class='tabs_Ar row'>
+            <div class="col-xs-4">
+                <img style="display: block" src="../imgs/ljb/tab_ar.png" alt=""/>
+            </div>
+            <div class="col-xs-4">
+                <img src="../imgs/ljb/tab_ar.png" alt=""/>
+            </div>
+            <div class="col-xs-4">
+                <img src="../imgs/ljb/tab_ar.png" alt=""/>
+            </div>
+        </div>
+    </div>
+    {{#$value.bjShop}}
+    {{/each}}
+</script>
+<!--评论-->
+<script type="text/template" id='evaluate-tpl'>
+    {{each list}}
+    <div class="row appraise_Top">
+        <div class="col-xs-6 ">
+            <i class="fl">{{$value.comName}}</i>
+        </div>
+        <div class="col-xs-6 fr">
+            <i class="fr">{{$value.comTime}}</i>
+        </div>
+        <div class="col-xs-6 fl">
+                <span class="star fl">
+                    <em class="start4"></em>
+                </span>
+        </div>
+        <div class="col-xs-6 fr">
+            <span style="font-size: 12px" class="fr">{{$value.comFrom}}</span>
+        </div>
+    </div>
+    <div class="appraise_text">
+        <p>{{$value.comContent}}</p>
+        <a>回复</a>
+    </div>
+    {{/each}}
+</script>
+
+</body>
+<script src="../lib/requirejs/require.min.js" data-main='../js/common/main.js'></script>
+</html>
+
+

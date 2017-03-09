@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, minimum-scale=1, maximum-scale=1, initial-scale=1">
+    <title>产品分类 - 慢慢买比价网</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="x5-fullscreen" content="true">
+    <link rel="shortcut icon" href="../favicon.ico"/>
+    <meta name="full-screen" content="yes">
+    <!--第三方的样式-->
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <!--引用公共的样式-->
+    <link rel="stylesheet" href="../less/common.css">
+    <!---->
+    <!--头部 底部样式-->
+    <link rel="stylesheet" href="../less/brand.css"/>
+    <!--引用自己的样式-->
+    <link rel="stylesheet" href="../less/bijia_search.css"/>
+
+</head>
+<body style="padding-bottom: 60px; "  ng-app="">
+<!--头部-->
+<div ng-include="'commom/header.html'"></div>
+<!--搜索框-->
+<div ng-include="'commom/search_input.html'"></div>
+
+<!--商品分类-->
+<section id="category">
+    <div class="panel-group" style="margin-bottom: 0px" id="accordion" role="tablist" aria-multiselectable="true">
+                            <!--模板-->
+        </div>
+    </div>
+</section>
+
+<!--底部-->
+<div ng-include="'commom/footer.html'"></div>
+
+<!--下载慢慢买app入口-->
+<div ng-include="'commom/app_entrance.html'"></div>
+
+<!--AjaxLoading-->
+<div ng-include="'commom/ajax_loading.html'"></div>
+
+</body>
+
+
+<!--分类标题模板-->
+<script id="categoryBox" type="text/html">
+    {{each result as value i}}
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="{{i}}">
+            <h4 class="panel-title">
+                <a id='title_a' data-toggle="collapse" data-titleid="{{value.titleId}}" data-parent="#accordion"
+                   href="#collapse{{i}}" aria-expanded="true"
+                   aria-controls="collapse{{i}}">
+                    {{value.title}}
+                </a>
+            </h4>
+        </div>
+        <div id="collapse{{i}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{i}}">
+            <div class="panel-body">
+                <div class="row">
+                    <!--分类列表模板-->
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</script>
+<!--分类列表模板-->
+<script id="categoryListTpl" type="text/html">
+    {{each result as value i}}
+    <div class="col-xs-4"><a href="bijia_list.html?categoryid={{value.categoryId}}" style="font-size: 13px">{{value.category}}</a>
+    </div>
+    {{/each}}
+</script>
+
+<script src="../lib/requirejs/require.min.js" data-main='../js/common/main.js'></script>
+</html>

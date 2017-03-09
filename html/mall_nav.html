@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, minimum-scale=1, maximum-scale=1, initial-scale=1">
+    <title>商城导航 -- 慢慢买</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="x5-fullscreen" content="true">
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <meta name="full-screen" content="yes">
+    <!--第三方的样式-->
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <!--引用公共的样式-->
+    <link rel="stylesheet" href="../less/common.css">
+    <!--引用自己的样式-->
+    <link rel="stylesheet" href="../less/mall_nav.css"/>
+
+</head>
+<body  ng-app="">
+<!--头部-->
+<header class="orange_bg header_barnd clearfix">
+    <a href="../index.html" class="back"><span class="glyphicon glyphicon-menu-left icon_back"></span></a>
+    <h1> 商城导航</h1>
+    <a href="javascript:;" class="down_app_icon"><img src="../imgs/header_app.png" alt=""/></a>
+</header>
+<!--各商城-->
+<div >
+    <div class="link clearfix" id="mall_all">
+    <!--各商城的坑-->
+    </div>
+    <!--AjaxLoading-->
+    <div ng-include="'commom/ajax_loading.html'"></div>
+</div>
+
+<!--当前位置-->
+<p class="current_position"><span>首页</span>&nbsp;>&nbsp; <span>商城导航</span></p>
+<!--底部-->
+<div ng-include="'commom/footer.html'"></div>
+<!--下载慢慢买app入口-->
+<div ng-include="'commom/app_download_icon.html'"></div>
+<script id="mall_all_tpl" type="text/template">
+    {{each list}}
+       <a href="{{$value.navHref}}" target="_blank">
+            <img src="{{$value.navImg}}" alt=""/>{{$value.navTitle}}
+       </a>
+    {{ /each}}
+</script>
+<script src="../lib/requirejs/require.min.js" data-main='../js/common/main.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta charset="UTF-8">
+    <title>
+        最新优惠 - 省钱控 - 慢慢买
+    </title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="x5-fullscreen" content="true">
+    <!--网站图标-->
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <meta name="full-screen" content="yes">
+    <!--引入第三方插件样式-->
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css"/>
+    <!--应用公共样式-->
+    <link rel="stylesheet" href="../less/common.css"/>
+    <!--自己写的样式-->
+    <link rel="stylesheet" href="../less/brand.css"/>
+    <link rel="stylesheet" href="../less/s_discout.css"/>
+</head>
+<body ng-app="">
+    <!--头部-->
+    <header class="orange_bg header_barnd clearfix">
+        <a href="../index.html" class="back"><span class="glyphicon glyphicon-menu-left icon_back"></span></a>
+        <h1> 省钱控-最新优惠</h1>
+        <a href="javascript:;" class="down_app_icon"><img src="../imgs/header_app.png" alt=""/></a>
+    </header>
+    <!--商品列表信息-->
+    <div>
+        <div class="wrap">
+            <!--商品列表-->
+            <div class="product_container clearfix">
+                <ul>
+                    <!--一个li一个商品-->
+                   <!--单个商品的坑-->
+                </ul>
+            </div>
+            <!--上下页面按钮、选择页面按钮-->
+            <!--分页-->
+            <div class="product_page clearfix">
+                <input type="button" value="上一页" class="btn btn-default fl pre" />
+                <input type="button" value="下一页" class="btn btn-default fr next" />
+                <div class="select text-center">
+                    <button  class="btn btn-default">第1页</button>
+                    <ul>
+                     <!--   <li>第1页</li>-->
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--当前位置-->
+    <p class="current_position"><span>首页</span>&nbsp;>&nbsp; <span>省钱控</span></p>
+    <!--底部-->
+    <div ng-include="'commom/footer.html'"></div>
+    <!--下载慢慢买app入口-->
+    <div ng-include="'commom/app_download_icon.html'"></div>
+
+    <!--AjaxLoading-->
+    <div ng-include="'commom/ajax_loading.html'"></div>
+    <!--单个商品的模板-->
+    <script type="text/tpl" id="s_discount_tpl">
+        {{each list as product i}}
+            <li class="product_single clearfix">
+                <a href="./list_details.html?productId={{ product.productId }}">
+                    <!--商品的图片-->
+                    <div class="pic">
+                    <!--注意这里要加#，不加的话是没有图片显示的，具体可查看artemplate相关说明-->
+                        {{ #product.productImgSm }}
+                    </div>
+                    <!--商品的信息-->
+                    <div class="info clearfix">
+                        <!--商品的标题信息-->
+                        <div class="title">
+                            {{ product.productName }}
+                            <span>{{ product.productPinkage }}</span>
+                        </div>
+                        <div class="other">
+                            <span class="mall">{{ product.productFrom }}&nbsp;|&nbsp;{{ product.productTime }}5</span>
+                            <!--商品的评论-->
+                                    <span class="comment">
+                                        <i class="icon_comment"></i>
+                                        {{ getNum(product.productComCount) }}
+                                    </span>
+                        </div>
+                    </div>
+                </a>
+             </li>
+        {{ /each }}
+    </script>
+    <script src="../lib/requirejs/require.min.js" data-main='../js/common/main.js'></script>
+</body>
+</html>

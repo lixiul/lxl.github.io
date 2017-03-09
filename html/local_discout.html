@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>慢慢买</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="full-screen" content="yes">
+    <!--网站图标-->
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <!--引用第三方样式-->
+    <link href="../lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+   <!--引用公共样式-->
+    <link rel="stylesheet" href="../less/common.css"/>
+    <!--引用自己样式-->
+    <link rel="stylesheet" href="../less/local_discout.css">
+</head>
+<body ng-app="">
+    <!--头部-->
+    <header class="orange_bg header_barnd clearfix">
+        <a href="/mmm/" class="back"><span class="glyphicon glyphicon-menu-left icon_back"></span></a>
+        <h1>国内折扣</h1>
+        <a href="javascript:;" class="down_app_icon"><img src="../imgs/header_app.png" alt=""/></a>
+    </header>
+    <!--产品-->
+    <div class="container">
+        <div class="row" id="localDiscout">
+            <!--国内折扣商品的容器-->
+        </div>
+    </div>
+    <!--底部-->
+    <div ng-include="'commom/footer.html'"></div>
+    <!--下载慢慢买app入口-->
+    <div ng-include="'commom/app_download_icon.html'"></div>
+    <!--AjaxLoading-->
+    <div ng-include="'commom/ajax_loading.html'"></div>
+    </body>
+    <!--国内折扣商品的模板--在img里面加个#能帮我们渲染标签-->
+    <script type="text/template" id="local_tpl">
+        {{each result as value i}}
+        <div class="col-sm-6 col-xs-6" id="{{productId}}">
+            <a href="./local_discout_list_details.html?productId={{ value.productId }}">
+                <div class="img">{{#value.productImg}}</div>
+                <div class="title">{{value.productName}}</div>
+                <div  class="cost">{{value.productPrice}}</div>
+                <div class="info">{{value.productFrom}} | {{value.productTime}}</div>
+            </a>
+        </div>
+        {{/each}}
+    </script>
+    <script src="../lib/requirejs/require.min.js" data-main='../js/common/main.js'></script>
+</html>

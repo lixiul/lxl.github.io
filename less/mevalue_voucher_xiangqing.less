@@ -1,0 +1,195 @@
+/*头部*/
+.header_barnd{
+  height: 49px;
+  line-height: 49px;
+  overflow: hidden;
+  position: relative;
+  &.orange_bg{
+    background-color: #f4483e;
+  }
+  .back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 49px;
+    text-align: center;
+    >.icon_back{
+      font-size: 18px;
+      margin-top: 15px;
+      color:#fff;
+    }
+  }
+  h1{
+    width: 100%;
+    margin:0 auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 100%;
+    line-height: 49px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif !important;
+    text-align: center;
+  }
+  .down_app_icon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    text-align: right;
+    padding:0 3%;
+  }
+  img{
+    max-height: 25px;
+  }
+}
+
+/*商品*/
+.product_content{
+  .tip{
+    text-align: center;
+    margin: 8px 0;
+    color:#999;
+  }
+  .product_box{
+    li{
+      background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'><path fill='#999999' d='M746.255255 299.653099 746.33098 299.728824 713.12674 332.933063 713.049992 332.857339 297.859875 748.048479 264.635169 714.82275 679.816077 299.642866 264.635169-115.538041 297.859875-148.762747 713.00906 266.386438 713.085808 266.30969 746.341213 299.567141Z' transform='translate(0, 812) scale(1, -1)'/></svg>");
+      background-size:20px 20px;
+      background-repeat: no-repeat;
+      background-position: right center;
+      border-bottom: 1px solid #e7e7e7;
+      overflow: hidden;
+      position: relative;
+
+      a{
+        display: inline-block;
+        padding: 10px;
+        height: 100%;
+        width: 100%;
+        font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif !important;
+        .pic{
+          width: 100px;
+          height: 80px;
+          margin-right: 10px;
+          float: left;
+          overflow: hidden;
+            img{
+              max-width:100px;
+            }
+        }
+        .info{
+          padding-right: 30px;
+          font-size: 14px;
+          line-height: 24px;
+          overflow: hidden;
+          h3{
+            color: #333;
+            word-break: break-all;
+            line-height: 20px;
+            margin: 0;
+          }
+          h2{
+            margin-top: 6px;
+            font-weight: bold;
+          }
+        .time{
+          color: #EE7700;
+          font-size: 12px;
+          margin-top: 10px;
+        }
+        }
+      }
+    }
+  }
+}
+/*弹出框*/
+.placeholder{
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  display: none;
+  text-align: center;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .8);
+  overflow: hidden;
+}
+/*轮播图*/
+.carousel_img{
+  position: fixed;
+  z-index: 1100;
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  margin-top: -100px;
+  left: 50%;
+  margin-left: -100px;
+  display: none;
+    .mobileImg{
+      width: 100%;
+      display: block;
+      height: 100%;
+    }
+    .mobileImg > img{
+      width: 100%;
+      height: 100%;
+    }
+}
+
+/*当前位置*/
+.current_position{
+  height: 36px;
+  line-height: 36px;
+  padding: 0 3%;
+  background-color:#ebebeb;
+  background: -webkit-gradient(linear,0 0,0 100%,from(#ffffff),to(#ebebeb));
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ccc;
+  padding-left: 3%;
+  margin: 0;
+  color: #000;
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif !important;
+  font-size: 14px;
+  margin-top: 20px;
+}
+/*底部*/
+footer{
+  margin-top: 20px;
+  background: #F2F2F2;
+  .row{
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    >div{
+      height: 34px;
+      line-height: 34px;
+      text-align: center;
+      border-right: 1px solid #ccc;
+      >a{
+        display: block;
+        height: 100%;
+      }
+    }
+    >div:last-of-type{
+      border-right: none;
+      .to_top_icon{
+        height: 15px;
+        width: 15px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+  >.footer_msg{
+    padding: 10px 0;
+    >p{
+      text-align: center;
+      margin: 0;
+      >a:nth-of-type(1){
+        color:#ff0000;
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="x5-fullscreen" content="true">
+    <title>历史价格查询</title>
+    <!--第三方样式-->
+    <link href="../lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!--引用公共的样式-->
+    <link rel="stylesheet" href="../less/common.css"/>
+    <!--引用自己的样式-->
+    <link rel="stylesheet" href="../less/brand.css"/>
+    <link rel="stylesheet" href="../less/see_history.css"/>
+
+    <!--第三方脚本-->
+    <!--<script src="../lib/jquery/jquery.min.js"></script>-->
+    <!--<script src="../lib/bootstrap/js/bootstrap.min.js"></script>-->
+    <!--<script src="../lib/artTemplate/template.js"></script>-->
+</head>
+<body  style="padding-bottom: 60px; "  ng-app="">
+<!--头部-->
+<header class="orange_bg header_barnd clearfix">
+    <a href="index.html" class="back"><span class="glyphicon glyphicon-menu-left icon_back"></span></a>
+    <h1>历史价格查询</h1>
+    <a href="javascript:;" class="down_app_icon"><img src="../imgs/header_app.png" alt=""/></a>
+</header>
+<!--主体-->
+<div  class="histroy" >
+    <p>商品链接</p>
+    <div class="input">
+        <input type="text" placeholder="请通过购物App中使用分享或浏览器打开商品页面获取商品链接"/>
+    </div>
+    <div class="btn">
+        <input type="button" value="查询历史价格"/>
+        <input type="button" value="重置"/>
+    </div>
+    <div class="notice">
+        <div class="hd">两步操作即可识别商品真假促销</div>
+        <div class="bd">
+            <p>1.打开购物APP（如手机淘宝）复制商品链接</p>
+            <p>2.打开慢慢买APP，系统自动识别查历史价</p>
+        </div>
+    </div>
+</div>
+  <!--下载慢慢买app入口-->
+<div ng-include="'commom/app_entrance.html'"></div>
+
+<script src="../lib/requirejs/require.min.js" data-main='../js/common/main.js'></script>
+
+</body>
+</html>

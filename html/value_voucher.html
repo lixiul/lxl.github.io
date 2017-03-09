@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>肯德基优惠券--买买网</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="full-screen" content="yes">
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <!--网站图标-->
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <!--引用第三方样式-->
+    <link href="../lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!--引用公共样式-->
+    <link rel="stylesheet" href="../less/common.css"/>
+    <!--自己写的样式-->
+    <link rel="stylesheet" href="../less/value_voucher.css"/>
+</head>
+<body ng-app="" style="background: #F2F2F2">
+<!--头部-->
+    <header class="orange_bg header_barnd clearfix">
+        <a href="/mmm/" class="back"><span class="glyphicon glyphicon-menu-left icon_back"></span></a>
+        <h1>优惠券</h1>
+        <a href="javascript:;" class="down_app_icon"><img src="../imgs/header_app.png" alt=""/></a>
+    </header>
+    <!--主题内容-->
+    <div style="background: #fff; padding-bottom: 10px;">
+        <div class="quan-box">
+            <div class="quan-model clearfix" >
+              <ul>
+                  <!--这个是坑-->
+              </ul>
+            </div>
+        </div>
+    </div>
+    <div ng-include="'commom/curr_position.html'"></div>
+    <!--底部-->
+    <div ng-include="'commom/footer.html'"></div>
+
+    <!--AjaxLoading-->
+    <div ng-include="'commom/ajax_loading.html'"></div>
+
+    <script type="text/html" id="mentTpl1">
+        {{each list as value i}}
+        <li class="fl">
+            <a href='value_voucher_list.html?couponId={{value.couponId}}' class="clearfix">
+                <input type="hidden" value="{{value.couponLink}}"/>
+                <img src="{{value.couponImg}}" alt=""/>
+                <p>{{value.couponTitle}}</p>
+            </a>
+        </li>
+        {{/each}}
+    </script>
+    <script src="../lib/requirejs/require.min.js" data-main='../js/common/main.js'></script>
+</body>
+
+</html>

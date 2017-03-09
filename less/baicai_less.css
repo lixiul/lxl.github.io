@@ -1,0 +1,309 @@
+body {
+  color: #000;
+  font-family: "微软雅黑";
+}
+.bc_layout {
+  width: 100%;
+  /*最大宽度*/
+  max-width: 750px;
+  /*最小宽度*/
+  min-width: 320px;
+  /*居中显示*/
+  margin: 0 auto;
+  background-color: #f7f7f7;
+  /*顶部*/
+  /*tab栏*/
+  /*限时折扣图片*/
+  /*商品部分*/
+  /*底部*/
+}
+.bc_layout > .header {
+  width: 100%;
+  height: 44px;
+  text-align: center;
+  position: relative;
+  background-color: #e4393c;
+  color: #fff;
+}
+.bc_layout > .header > .icon_Back {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 44px;
+  font-size: 20px;
+  color: #fff;
+  line-height: 44px;
+}
+.bc_layout > .header > div {
+  width: 50px;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  right: 0;
+  top: 0;
+}
+.bc_layout > .header > div > .icon_App {
+  display: block;
+  background: url("../imgs/header_app.png") no-repeat center;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  -webkit-background-size: contain;
+  position: relative;
+  background-size: 32px;
+}
+.bc_layout > .header > h1 {
+  position: absolute;
+  width: 100%;
+  line-height: 44px;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-size: 20px;
+  font-family: 'Consolas';
+  font-weight: bolder;
+}
+.bc_layout > .bc_Nav {
+  width: 100%;
+  position: relative;
+  height: 38px;
+  border-bottom: 1px solid #eeeeee;
+}
+.bc_layout > .bc_Nav > .bc_Tab {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding-right: 38px;
+  background-color: #fff;
+  overflow: hidden;
+}
+.bc_layout > .bc_Nav > .bc_Tab > .nav_ul {
+  width: 200%;
+  height: 100%;
+  text-align: center;
+  line-height: 38px;
+}
+.bc_layout > .bc_Nav > .bc_Tab > .nav_ul > li {
+  float: left;
+}
+.bc_layout > .bc_Nav > .bc_Tab > .nav_ul > li > a {
+  display: block;
+  height: 36px;
+  font-size: 13px;
+  font-family: Consolas;
+  margin: 0 12px;
+}
+.bc_layout > .bc_Nav > .bc_Tab > .nav_ul > li > a.active {
+  color: #e4393c;
+  border-bottom: 2px solid #e4393c;
+}
+.bc_layout > .bc_Nav > .search {
+  position: absolute;
+  right: 0;
+  width: 38px;
+  height: 38px;
+  text-align: center;
+  background-color: #fbfbfb;
+  border-left: 1px solid #e6e6e6;
+}
+.bc_layout > .bc_Nav > .search > .icon_Search {
+  color: #8c8c8c;
+  line-height: 38px;
+  font-size: 18px;
+}
+.bc_layout > .ad_Img {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.bc_layout > .ad_Img > img {
+  width: 100%;
+}
+.bc_layout > .bc_List {
+  width: 100%;
+}
+.bc_layout > .bc_List li {
+  width: 100%;
+  margin: 6px auto;
+  background-color: #fff;
+  position: relative;
+  padding: 10px 5px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.bc_layout > .bc_List li > a {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.bc_layout > .bc_List li > img {
+  float: left;
+  width: 130px;
+  height: 130px;
+  margin-right: 5px;
+}
+.bc_layout > .bc_List li > .bc_Place {
+  width: 100%;
+  height: 80px;
+}
+.bc_layout > .bc_List li > .bc_Place .bc_Place_Top {
+  min-height: 28px;
+  max-height: 40px;
+  width: 100%;
+  height: 100%;
+}
+.bc_layout > .bc_List li > .bc_Place .bc_Place_Top .bc_title {
+  width: 100%;
+  height: 36px;
+}
+.bc_layout > .bc_List li > .bc_Place .bc_Place_Top .cost {
+  width: 100%;
+  font-family: "微软雅黑";
+  line-height: 30px;
+  font-size: 23px;
+  color: #fc353a;
+  position: relative;
+}
+.bc_layout > .bc_List li > .bc_Place .bc_Place_Top .cost i {
+  font-size: 15px;
+}
+.bc_layout > .bc_List li > .bc_Place .bc_Place_Top .cost em {
+  margin-left: 5px;
+  font-size: 14px;
+}
+.bc_layout > .bc_List li > .bc_Place .bc_Place_Top .cost del {
+  font-size: 12px;
+  margin-left: 6px;
+  color: #888;
+  text-decoration: line-through;
+}
+.bc_layout > .bc_List li > .bc_Place .bc_Place_Bottom {
+  margin-top: 35px;
+  margin-bottom: 10px;
+}
+.bc_layout > .bc_List li > .bc_Place .bc_Place_Bottom > div > p {
+  display: inline-block;
+  position: absolute;
+  margin-left: 3px;
+  margin-top: -2px;
+  color: #fc353a;
+}
+.bc_layout > .bc_List li > .bc_Place .bc_Place_Bottom .coupon {
+  width: 110px;
+  height: 28px;
+  line-height: 28px;
+  margin-top: 7px;
+  float: left;
+  border: 1px dotted #e4393c;
+}
+.bc_layout > .bc_List li > .bc_Place .bc_Place_Bottom .coupon a {
+  display: block;
+  font-size: 12px;
+  text-align: center;
+  color: #e4393c;
+}
+.bc_layout > .bc_List li > .bc_Place .bc_Place_Bottom .placing_Link {
+  width: 60px;
+  height: 30px;
+  margin-top: 6px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #ff5e5d;
+  float: right;
+}
+.bc_layout > .bc_List li > .bc_Place .bc_Place_Bottom .placing_Link > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+.bc_layout footer {
+  padding-top: 20px;
+}
+.bc_layout footer .row {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.bc_layout footer .row > div {
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  border-right: 1px solid #ccc;
+}
+.bc_layout footer .row > div > a {
+  display: block;
+  height: 100%;
+}
+.bc_layout footer .row > div:last-of-type {
+  border-right: none;
+}
+.bc_layout footer .row > div:last-of-type .to_top_icon {
+  height: 15px;
+  width: 15px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.bc_layout footer > .footer_msg {
+  padding: 10px 0;
+}
+.bc_layout footer > .footer_msg > p {
+  text-align: center;
+  margin: 0;
+}
+.bc_layout footer > .footer_msg > p > a:nth-of-type(1) {
+  color: #ff0000;
+}
+/*进度条*/
+.bar {
+  height: 25px;
+  overflow: hidden;
+}
+.bar i {
+  position: relative;
+  box-sizing: border-box;
+  width: 82px;
+  height: 14px;
+  border: 1px solid #fc353a;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 900;
+  background: #ffb7b7;
+  text-align: center;
+  overflow: hidden;
+  display: inline-block;
+}
+.bar i em {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 5px;
+  background: #fc353a;
+  display: block;
+  transition: all 0.3s cubic-bezier(0.39, 0.58, 0.57, 1);
+  width: 0;
+}
+.bar i span {
+  font-size: 12px;
+  line-height: 11px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.bar b {
+  font-weight: normal;
+  font-size: 12px;
+  color: #999999;
+  vertical-align: 3px;
+  margin-left: 10px;
+  color: #fc353a;
+}

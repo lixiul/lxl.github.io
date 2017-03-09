@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, minimum-scale=1, maximum-scale=1, initial-scale=1">
+    <title>注册界面</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="x5-fullscreen" content="true">
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <meta name="full-screen" content="yes">
+    <!--第三方的样式-->
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <!--引用公共的样式-->
+    <link rel="stylesheet" href="../less/common.css">
+    <!--引用自己的样式-->
+    <link rel="stylesheet" href="../less/register.css">
+</head>
+<body style="padding-bottom: 60px" ng-app="">
+<!--头部-->
+<div ng-include="'commom/header.html'"></div>
+<!--搜索框-->
+<section class="search_box">
+    <form action="">
+        <div class="input_box">
+            <input type="text" placeholder="输入你想比价的商品"/>
+            <button type="submit" class='search_btn'>搜索</button>
+        </div>
+    </form>
+</section>
+<div class="register_max">
+    <div class="register_mid">
+        <input class="username" type="text" placeholder="请输入您的用户名"/>
+        <input class="password" type="text" placeholder="密码（6-20个字符）"/>
+        <input class="phone" type="text" placeholder="请输入手机号"/>
+        <div class="num">
+            <img src="" alt=""/>
+            <input class="num_yanzheng" type="text"/>
+            <input class="getphone" type="submit" value="获取手机验证码"></input>
+        </div>
+        <input class="yanzheng" type="text" placeholder="请输入手机验证码"/>
+        <input class="mail" type="text" placeholder="请输入您的邮箱"/>
+        <input class="sub" type="submit" value="注册"></input>
+    </div>
+</div>
+
+<!--底部-->
+<div ng-include="'commom/footer.html'"></div>
+<div ng-include="'commom/app_entrance.html'"></div>
+
+</body>
+<!--<script src="../lib/requirejs/require.min.js" data-main='../js/common/main.js'></script>-->
+<script src='../lib/angular/angular.min.js'></script>
+
+</html>

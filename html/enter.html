@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, minimum-scale=1, maximum-scale=1, initial-scale=1">
+    <title>登录界面</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="x5-fullscreen" content="true">
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <meta name="full-screen" content="yes">
+    <!--第三方的样式-->
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <!--引用公共的样式-->
+    <link rel="stylesheet" href="../less/common.css">
+    <!--引用自己的样式-->
+    <link rel="stylesheet" href="../less/enter.css">
+</head>
+<body style="padding-bottom: 60px" ng-app="">
+    <!--头部-->
+    <div ng-include="'commom/header.html'"></div>
+    <!--搜索框-->
+    <section class="search_box">
+        <form action="">
+            <div class="input_box">
+                <input type="text" placeholder="输入你想比价的商品"/>
+                <button type="submit" class='search_btn'>搜索</button>
+            </div>
+        </form>
+    </section>
+    <div class="enter_max">
+        <div class="enter_mid">
+            <input class="user_name" type="text" placeholder="用户名"/>
+            <input class="pass_word" type="text" placeholder="密码"/>
+            <input class="sub" type="submit" value="登录"></input>
+            <p class="check_box"><input type="checkbox" checked>一个月内自动登录</p>
+            <p class="zhu">忘记密码：请电脑登录www.manmanbuy.com找回</p>
+        </div>
+    </div>
+
+    <!--底部-->
+    <div ng-include="'commom/footer.html'"></div>
+    <div ng-include="'commom/app_entrance.html'"></div>
+
+</body>
+<!--<script src="../lib/requirejs/require.min.js" data-main='../js/common/main.js'></script>-->
+<script src='../lib/angular/angular.min.js'></script>
+</html>

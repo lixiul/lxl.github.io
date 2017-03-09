@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, minimum-scale=1, maximum-scale=1, initial-scale=1">
+    <title>品牌大全</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="x5-fullscreen" content="true">
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <meta name="full-screen" content="yes">
+    <!--第三方的样式-->
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <!--引用公共的样式-->
+    <link rel="stylesheet" href="../less/common.css">
+    <!--引用自己的样式-->
+    <link rel="stylesheet" href="../less/brand.css">
+</head>
+<body style="padding-bottom: 60px" ng-app="">
+    <!--头部-->
+    <div ng-include="'commom/header.html'"></div>
+    <!--搜索框-->
+    <div ng-include="'commom/search_input.html'"></div>
+    <!--当前位置-->
+    <p class="current_position"><span>首页</span>&nbsp;>&nbsp; <span>品牌大全</span></p>
+    <!--品牌排行列表-->
+    <section class="brand_top_list">
+        <h3>热门品牌排行</h3>
+        <div class="brand_list" id="top_list">
+            <!--排行榜挖出来的坑-->
+        </div>
+    </section>
+    <!--底部-->
+    <div ng-include="'commom/footer.html'"></div>
+
+    <!--下载慢慢买app入口-->
+    <div ng-include="'commom/app_entrance.html'"></div>
+
+    <!--AjaxLoading-->
+    <div ng-include="'commom/ajax_loading.html'"></div>
+
+    <script id="tops_list_tpl" type="text/template">
+        {{each list}}
+           <a href="./brand_next.html?brandTitleId={{$value.brandTitleId}}">{{$value.brandTitle}}</a>
+        {{/each}}
+    </script>
+    <script src="../lib/requirejs/require.min.js" data-main='../js/common/main.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<style type="text/css">
+    /*下载慢慢买app入口*/
+    .mmm_app {
+        position: fixed;
+        height: 60px;
+        background: #fff;
+        bottom: 0;
+        left: 0;
+        padding: 0 2%;
+        width: 100%;
+    }
+    .mmm_app .row .remove_icon {
+        max-height: 20px;
+        margin-top: 17px;
+        width: 100%;
+    }
+    .mmm_app .row .logo_icon {
+        float: left;
+        max-height: 35px;
+        margin-top: 12px;
+    }
+    .mmm_app .row p {
+        margin: 10px 0 0 10px;
+        float: left;
+    }
+    .mmm_app .row p > span:nth-of-type(1) {
+        font-size: 14px;
+        color: #888;
+    }
+    .mmm_app .row p > span:nth-of-type(2) {
+        font-size: 12px;
+        color: #999;
+    }
+    .mmm_app .row > div:nth-of-type(3) {
+        float: right;
+        margin-top: 12px;
+    }
+    .mmm_app .row > div:nth-of-type(3) > a {
+        color: #fff;
+        width: 74px;
+        display: inline-block;
+        background: #ff7700;
+        border-radius: 4px;
+        box-shadow: inset 0 -2px #ff5500;
+        padding: 10px;
+        text-align: left;
+    }
+</style>
+<section class="mmm_app" id="mmm_app">
+    <div>
+        <div class="row">
+            <div class="col-xs-1"><img class="remove_icon" id='remove_icon' src="../imgs/del.png" alt=""/></div>
+            <div class="col-xs-8">
+                <img src="../imgs/logo.png" alt="" class="logo_icon"/>
+                <p>
+                    <span>慢慢买</span>
+                    <br />
+                    <span>全网比价，查历史价格</span>
+                </p>
+            </div>
+            <div class="col-xs-3">
+                <a href="javascript:;">立即打开</a>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    document.getElementById('remove_icon').onclick=function(){
+        document.getElementById('mmm_app').style.display='none';
+    };
+</script>

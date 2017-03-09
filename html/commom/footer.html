@@ -1,0 +1,58 @@
+<style type="text/css">
+    /*底部*/
+    footer {
+        padding-top: 20px;
+        background: #F2F2F2;
+    }
+    footer .row {
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+    footer .row > div {
+        height: 34px;
+        line-height: 34px;
+        text-align: center;
+        border-right: 1px solid #ccc;
+    }
+    footer .row > div > a {
+        display: block;
+        height: 100%;
+    }
+    footer .row > div:last-of-type {
+        border-right: none;
+    }
+    footer .row > div:last-of-type .to_top_icon {
+        height: 15px;
+        width: 15px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+    footer > .footer_msg {
+        padding: 10px 0;
+    }
+    footer > .footer_msg > p {
+        text-align: center;
+        margin: 0;
+    }
+    footer > .footer_msg > p > a:nth-of-type(1) {
+        color: #ff0000;
+    }
+</style>
+<footer class="container-fluid">
+    <div class="row">
+        <div class="col-xs-3"><a href="/mmm/html/enter.html">登录</a></div>
+        <div class="col-xs-3"><a href="/mmm/html/register.html">注册</a></div>
+        <div class="col-xs-6" id="to_top"><a href="javascript:;"><img src="/mmm/imgs/top.jpg" class="to_top_icon"></img><span>返回顶部</span></a></div>
+    </div>
+    <div class="footer_msg">
+        <p><a href="javascript:;">手机APP下载</a><a href="javascript:;">慢慢买手机版</a>-- 掌上比价平台</p>
+        <p>m.manmanbuy.com</p>
+    </div>
+</footer>
+
+<script>
+    /*返回顶部*/
+    $('#to_top').on('click',function(){
+       $('body,html').animate({scrollTop:0},500);
+    });
+</script>

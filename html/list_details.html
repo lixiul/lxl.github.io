@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, minimum-scale=1, maximum-scale=1, initial-scale=1">
+    <title>商城导航 -- 慢慢买</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="x5-fullscreen" content="true">
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <meta name="full-screen" content="yes">
+    <!--第三方的样式-->
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <!--引用公共的样式-->
+    <link rel="stylesheet" href="../less/common.css">
+    <!--引用自己的样式-->
+    <link rel="stylesheet" href="../less/list_details.css"/>
+</head>
+
+
+<body style="padding-bottom: 60px;">
+    <!--头部-->
+    <header class="orange_bg header_barnd clearfix">
+        <a href="#" onClick="javascript :history.back(-1);" class="back"><span class="glyphicon glyphicon-menu-left icon_back"></span></a>
+        <h1>详情</h1>
+        <a href="javascript:;" class="down_app_icon"><img src="../imgs/header_app.png" alt=""/></a>
+    </header>
+    <div class="container" >
+         <div class="content" id="content_id">
+             <!--宝贝详情挖出来的坑-->
+         </div>
+    </div>
+
+    <!--图片识别-->
+    <div class="photo">
+        <div class="photo_box">
+            <img src="../imgs/mmbweixin2.png" alt=""/>
+        </div>
+    </div>
+
+    <!--底部固定购买窗口-->
+    <div class="foot-buy">
+        <div class="comment"><a href="#">评论</a></div>
+        <div class="buy"><a href="#">前往购买</a>
+            <div class="APP">
+                <a href="#"><img src="../imgs/download.png" alt=""/></a>
+            </div>
+        </div>
+    </div>
+    <!--AjaxLoading-->
+    <div ng-include="'commom/ajax_loading.html'"></div>
+</body>
+
+<!--宝贝详情页列表模板-->
+<script id='content_tpl' type="text/template">
+        {{each list}}
+        <h3>{{$value.productName}}</h3>
+        <h4>{{$value.productPinkage}}</h4>
+        <div class="information">
+            <span class="mall">{{$value.productFrom}}</span>
+            <span class="addtime">{{$value.productTime}}</span>
+            <span class="author">{{$value.productTips}}</span>
+        </div>
+        <div class="text_area">
+            <div class="min_photo">{{#$value.productImg2}}</div>
+            <p class="font">{{$value.productInfo}}</p>
+        </div>
+        <div id="imgs">
+            {{#$value.productImg}}
+            {{productImgLg}}
+            {{#$value.productImg2}}
+            {{#$value.productImg3}}
+        </div>
+
+        <!--相关攻略部分-->
+        <div class="strategy_box">
+            <p>相关攻略：</p><br/>
+            <p class="strategy">《<a href="" target="_blank">美国亚马逊 注册&amp;直邮&amp;转运购物攻略</a>》</p><br/>
+            <p class="strategy">《<a href="" target="_blank">海淘新人教程 海外购物流程 如何海淘</a>》</p><br/>
+            <p>官方海淘可聊天群：164836477（适合那些既想了解海淘爆料，也想要跟别人讨论的海淘人）</p><br>
+            <p>官方海淘禁言群：518176536（适合那些只想了解海淘爆料，不想被噪音干扰的海淘人）</p><br/>
+            <p>官方海淘客服QQ：2654255364</p><br/>
+            <div class="go_shopping"><a href="http://www.taobao.com">前往购买</a></div>
+        </div>
+
+        <!--评论区域-->
+                {{#$value.productComment}}
+    {{/each}}
+</script>
+<script src="../lib/requirejs/require.min.js" data-main='../js/common/main.js'></script>
+</html>

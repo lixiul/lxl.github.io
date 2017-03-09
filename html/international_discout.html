@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta charset="UTF-8">
+    <title>
+        海淘折扣 -- 慢慢买
+    </title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="x5-fullscreen" content="true">
+    <!--网站图标-->
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <meta name="full-screen" content="yes">
+    <!--引入第三方插件样式-->
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css"/>
+    <!--应用公共样式-->
+    <link rel="stylesheet" href="../less/common.css"/>
+    <!--自己写的样式-->
+    <link rel="stylesheet" href="../less/international_discout.css"/>
+</head>
+<body ng-app="">
+    <!--头部-->
+    <header class="orange_bg header_barnd clearfix">
+        <a href="../index.html" class="back"><span class="glyphicon glyphicon-menu-left icon_back"></span></a>
+        <h1> 海淘折扣</h1>
+        <a href="javascript:;" class="down_app_icon"><img src="../imgs/header_app.png" alt=""/></a>
+    </header>
+    <!--商品列表信息-->
+    <div>
+        <div class="wrap">
+            <!--商品列表-->
+            <div class="product_container">
+                <ul id="product_list">
+                    <!--一个li一个商品-->
+                    <!--列表商品挖出来的坑-->
+                </ul>
+            </div>
+            <!--上下页面按钮、选择页面按钮-->
+            <!--分页-->
+            <div class="product_page clearfix">
+                <input type="button" value="上一页" class="btn btn-default fl prev" />
+                <input type="button" value="下一页" class="btn btn-default fr next" />
+                <div class="select text-center">
+                    <button  class="btn btn-default">第1页</button>
+                    <div class="ul_box">
+                        <ul>
+                            <!--<li>第1页</li>-->
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--当前位置-->
+    <p class="current_position"><span>首页</span>&nbsp;>&nbsp; <span>海淘折扣</span></p>
+    <!--底部-->
+    <div ng-include="'commom/footer.html'"></div>
+    <!--下载慢慢买app入口-->
+    <div ng-include="'commom/app_download_icon.html'"></div>
+
+    <!--AjaxLoading-->
+    <div ng-include="'commom/ajax_loading.html'"></div>
+
+    <script src="../lib/requirejs/require.min.js" data-main='../js/common/main.js'></script>
+
+    <script id="product_list_list" type="text/template">
+        {{each list}}
+        <li class="product_single clearfix">
+            <a href="./list_details.html?productId={{ $value.productId }}">
+                <!--商品的图片-->
+                <div class="pic">
+                    {{#$value.productImgSm}}
+                </div>
+                <!--商品的信息-->
+                <div class="info clearfix">
+                    <!--商品的标题信息-->
+                    <div class="title">
+                        <i>{{$value.productName}}</i>
+                        <span>{{$value.productPinkage}}</span>
+                    </div>
+                    <div class="other">
+                        <span class="mall">{{$value.productFrom}}&nbsp;|&nbsp;{{$value.productTime}}</span>
+                        <!--商品的评论-->
+                       <span class="comment">
+                         <i class="icon_comment"></i>
+                           {{getNum($value.productComCount)}}
+                       </span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        {{ /each}}
+    </script>
+</body>
+</html>

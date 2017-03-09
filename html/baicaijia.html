@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, minimum-scale=1, maximum-scale=1, initial-scale=1">
+    <title>白菜价--淘宝内部优惠券</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="x5-fullscreen" content="true">
+    <link rel="shortcut icon" href="../favicon.ico"/>
+    <meta name="full-screen" content="yes">
+    <!--第三方的样式-->
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <!--引用公共的样式-->
+    <link rel="stylesheet" href="../less/common.css">
+    <!--引用自己的样式-->
+    <link rel="stylesheet" href="../less/brand.less"/>
+    <link rel="stylesheet" href="../less/baicai_less.css"/>
+
+
+</head>
+<body ng-app="">
+<div class="bc_layout">
+    <!--顶部-->
+    <div class="header">
+        <a href="javascript:;" class='icon_Back glyphicon glyphicon-menu-left'></a>
+
+        <h1 style="margin: 0 ">白菜价-淘宝内部券</h1>
+
+        <div>
+            <a href="javascript:;" class="icon_App"></a>
+        </div>
+    </div>
+
+    <!--tab栏-->
+    <div class="bc_Nav">
+        <div class="bc_Tab">
+            <ul class="nav_ul">
+                <!--tab的模版-->
+                <!--<li>-->
+                <!--<a class="active" href="javascript:;">全部</a>-->
+                <!--</li>-->
+            </ul>
+        </div>
+        <div class="search">
+            <div class="icon_Search glyphicon glyphicon-list"></div>
+        </div>
+    </div>
+
+
+    <!--限时折扣图片-->
+    <div class="ad_Img">
+        <img src="../imgs/ljb/quan_banner.png" alt=""/>
+    </div>
+
+    <!--商品部分-->
+    <div class="bc_List">
+        <ul id="list-id">
+
+        </ul>
+    </div>
+
+    <!--底部-->
+    <div ng-include="'commom/footer.html'"></div>
+
+    <!--AjaxLoading-->
+    <div ng-include="'commom/ajax_loading.html'"></div>
+    <div ng-include="'commom/tips.html'"></div>
+</div>
+</body>
+<script src="../lib/requirejs/require.min.js" data-main='../js/common/main.js'></script>
+
+<!-- tab的模版 -->
+<script id="nav-tpl" type="text/template">
+    {{each list}}
+    <li>
+        <a class="{{$value.titleId==0?'active':''}}" href="javascript:;"
+           data-id='{{$value.titleId}}'>{{$value.title}}</a>
+    </li>
+    {{/each}}
+</script>
+<!--商品部分模板-->
+<script id='list-tpl' type="text/template">
+    {{each list}}
+    <li class="list_Content" data-id="{{$value.productId}}">
+        <a href="javascript:;"></a>
+        {{#$value.productImg?$value.productImg:'../imgs/ljb/bc1.jpg'}}
+        <div class="bc_Place">
+            <div class="bc_Place_Top">
+                <div class='bc_title'>
+                    {{#$value.productName}}
+                </div>
+                <div class="cost">
+                    {{#$value.productPrice}}
+                </div>
+            </div>
+            <div class="bc_Place_Bottom">
+
+                    {{#$value.productCouponRemain}}
+
+
+                <div class="coupon">
+                    {{#$value.productCoupon}}
+                </div>
+                <!--优惠券-->
+                <div class="placing_Link">
+                    <!--<a href="javascript:;">下单链接</a>-->
+                    {{#$value.productHref}}
+                </div>
+                <!--下单链接-->
+            </div>
+        </div>
+    </li>
+    {{/each}}
+</script>
+</html>

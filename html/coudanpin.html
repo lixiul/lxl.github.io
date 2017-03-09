@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <!--第三方的样式-->
+    <title>凑单品</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="x5-fullscreen" content="true">
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <meta name="full-screen" content="yes">
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <!--引用公共的样式-->
+    <link rel="stylesheet" href="../less/common.css">
+    <!--引用自己的样式-->
+    <link rel="stylesheet" href="../less/coudanpin.css"/>
+    <title>凑单品</title>
+</head>
+<body>
+<section id="cdp">
+    <!--顶部与返回按钮-->
+    <div class="cdp-top">
+        <div class="left">
+            <a href="#" class="glyphicon glyphicon-menu-left"></a>
+        </div>
+        <div class="center">
+            <h1>凑单品</h1>
+        </div>
+    </div>
+    <!--筛选与搜索-->
+    <div class="hd">
+        <!--筛选-->
+        <div class="filter">
+            <ul id="filter">
+                <li>
+                    <a href="#" id="filter-sort">
+                        <i></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="filter-area">
+                        <i></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="filter-price">
+                        <i></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--搜索-->
+        <div class="search">
+            <i class="icon-search">
+                <i class="icon-search"></i>
+            </i>
+        </div>
+        <!--下拉选项-->
+        <!--网站分类-->
+        <div class="popSort fil"  id="cdp-sort">
+            <!--网站的坑-->
+        </div>
+        <!--地区-->
+        <div class="popArea fil fl" id="cdp-area">
+            <!--地区的坑-->
+        </div>
+        <!--价格-->
+        <div class="popPrice fil fl"  id="cdp-price">
+            <ul>
+                <li><a href="#">全部价格</a></li>
+                <li><a href="#">1-3元</a></li>
+                <li><a href="#">3-5元</a></li>
+                <li><a href="#">5-10元</a></li>
+                <li><a href="#">10-15元</a></li>
+                <li><a href="#">15元以上</a></li>
+            </ul>
+        </div>
+        <!--搜索下拉-->
+        <div class="popSearch fl fil" id="cdp-popSearch">
+            <div class="popSearch-search clearfix">
+                <div class="text">
+                    <input type="search" placeholder="搜索您想要的凑单品">
+                    <a href="#"></a>
+                </div>
+                <div class="smt">
+                    <input type="button" value="搜索">
+                </div>
+            </div>
+            <div class="select">
+                <div class="t">排序</div>
+                <div class="c">
+                    <div class="clearfix">
+                        <dl>
+                            <dd>
+                                <a href="#">销量</a>
+                            </dd>
+                            <dd>
+                                <a href="#">价格↑</a>
+                            </dd>
+                            <dd  class="on">
+                                <a href="#">价格↓</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="select">
+                <div class="t">分类</div>
+                <div class="c">
+                    <dl class="clearfix">
+                        <dd class="on">
+                            <a href="#">全部</a>
+                        </dd>
+                        <dd>
+                            <a href="#">家居</a>
+                        </dd>
+                        <dd>
+                            <a href="#">数码</a>
+                        </dd>
+                        <dd>
+                            <a href="#">办公</a>
+                        </dd>
+                        <dd>
+                            <a href="#">个护</a>
+                        </dd>
+                        <dd>
+                            <a href="#">食品</a>
+                        </dd>
+                        <dd>
+                            <a href="#">母婴</a>
+                        </dd>
+                        <dd>
+                            <a href="#">服饰</a>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--产品列表-->
+    <div class="product">
+        <!--商品的坑-->
+    </div>
+</section>
+
+<!--AjaxLoading-->
+<div ng-include="'commom/ajax_loading.html'"></div>
+</body>
+<!--下拉网站模板-->
+<script type="text/html" id="fil-tpl">
+    <ul>
+    {{each result as value}}
+            <li shopId={{value.shopId}}>
+                <a href="#">{{value.shopName}}</a>
+            </li>
+    {{/each}}
+    </ul>
+</script>
+<!--下拉地区模板-->
+<script type="text/html" id="fils-tpl">
+    <ul>
+    {{each result as value}}
+        <li areaId={{value.areaId}}>
+            <a href="#">{{value.areaName}}</a>
+        </li>
+    {{/each}}
+    </ul>
+</script>
+<!--商品模板-->
+<script type="text/html" id="pro-tpl">
+    <ul id="container">
+        {{each result as value}}
+        <li productId={{value.productId }}>
+            <a href="#">
+                <div class="pic">
+                    <img src="{{value.productImg}}"  alt=""/>
+                </div>
+                <div class="title">{{value.productName}}</div>
+                <div class="other">
+                    <div class="price">
+                        {{value.productPrice}}
+                    </div>
+                </div>
+            </a>
+        </li>
+        {{/each}}
+    </ul>
+    <div class="clearfix"></div>
+</script>
+
+
+<script src="../lib/requirejs/require.min.js" data-main="../js/common/main.js"></script>
+</html>

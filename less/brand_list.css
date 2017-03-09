@@ -1,0 +1,202 @@
+.intro {
+  font-family: '微软雅黑';
+}
+.intro h1 {
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 10px;
+}
+.intro .intro_info {
+  padding: 10px;
+  background: #fff;
+}
+.intro .hot_title {
+  width: 100%;
+  line-height: 35px;
+  background: #f2f2f2;
+  padding: 0 10px;
+  margin: 10px 0;
+  color: #999;
+}
+.product_list {
+  background: #fff;
+}
+.product_list .title {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin-bottom: 0px;
+  font-size: 14px;
+}
+.product_list .title .glyphicon-triangle-top {
+  display: none;
+}
+.product_list .title > li.on > a {
+  color: #ed0000;
+}
+.product_list .title > li.on > a .glyphicon-triangle-top {
+  font-size: 10px;
+  display: inline-block;
+}
+.product_list ul > li {
+  border-bottom: 1px solid #f1f1f1;
+}
+.product_list ul > li .pic {
+  width: 110px;
+  margin-right: 10px;
+}
+.product_list ul > li .pic img {
+  width: 100%;
+}
+.product_list ul > li .info h3 {
+  color: #333;
+  height: 30px;
+  line-height: 15px;
+  margin-bottom: 0;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.product_list ul > li .info .price_sta > .price {
+  color: #ed0000;
+  line-height: 20px;
+}
+.product_list ul > li .info .price_sta > .price > em {
+  font-size: 18px;
+}
+.product_page {
+  padding: 10px;
+  position: relative;
+}
+.product_page input[type=button] {
+  position: absolute;
+  z-index: 3;
+}
+.product_page input[type=button]:nth-of-type(2) {
+  right: 15px;
+}
+.product_page .select {
+  position: relative;
+}
+.product_page .select .ul_box {
+  width: 75px;
+  max-height: 300px;
+  overflow: hidden;
+  background: #fff;
+  position: absolute;
+  bottom: 34px;
+  left: 50%;
+  margin-left: -38px;
+  border: 1px solid #f1f1f1;
+  border-radius: 5px;
+  display: none;
+  overflow-y: auto;
+}
+.product_page .select .ul_box ul > li {
+  line-height: 30px;
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 13px;
+}
+.product_page .select .ul_box ul > li:last-child {
+  border-bottom: 0;
+}
+.layer {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: none;
+  overflow: hidden;
+}
+.add_style {
+  left: 0 !important;
+  /*多属性的， left是过渡的属性  1s是过渡的时间  linear 过渡动画属性*/
+  transition: left .5s linear;
+  -moz-transition: left .5s linear ;
+  -o-transition: left .5s linear;
+  -webkit-transition: left .5s linear;
+}
+.rm_style {
+  left: -100%;
+  /*多属性的， left是过渡的属性  1s是过渡的时间  linear 过渡动画属性*/
+  transition: left .5s linear;
+  -moz-transition: left .5s linear ;
+  -o-transition: left .5s linear;
+  -webkit-transition: left .5s linear;
+}
+.menu_layer {
+  font-family: '微软雅黑';
+  width: 80%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  z-index: 999;
+  background: #fff;
+  overflow-y: scroll;
+}
+.menu_layer > .title {
+  line-height: 45px;
+  text-align: center;
+  font-size: 18px;
+  color: #000;
+  border-bottom: 1px solid #f7f7f7;
+}
+.menu_layer > .title > i {
+  width: 40px;
+  height: 40px;
+  color: #333;
+  text-align: center;
+  margin: 10px 10px 0 0;
+  float: right;
+}
+.menu_layer .row_box > .head {
+  height: 35px;
+  line-height: 35px;
+  font-size: 15px;
+  color: #333;
+  position: relative;
+  margin: 5px 0;
+}
+.menu_layer .row_box > .head > .subhead {
+  font-size: 12px;
+  color: #ff5000;
+  margin-left: 3px;
+}
+.menu_layer .row_box > .head > .icon {
+  line-height: 35px;
+  color: #999;
+  position: absolute;
+  right: 0px;
+}
+.menu_layer .row_box .row {
+  max-height: 75px;
+  overflow: hidden;
+}
+.menu_layer .row_box .row > div {
+  padding: 0 5px 10px 5px;
+}
+.menu_layer .row_box .row > div > a {
+  display: block;
+  line-height: 30px;
+  background: #f2f2f2;
+  border-radius: 5px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+.menu_layer .row_box .row > div.on > a {
+  background: #ff5000;
+  color: #fff;
+}
+.menu_layer .row_box .heightAuto {
+  max-height: 100% !important;
+}

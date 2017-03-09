@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, minimum-scale=1, maximum-scale=1, initial-scale=1">
+    <title>品牌大全二级页面</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="x5-fullscreen" content="true">
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <meta name="full-screen" content="yes">
+    <!--第三方的样式-->
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <!--引用公共的样式-->
+    <link rel="stylesheet" href="../less/common.css">
+    <!--引用自己的样式-->
+    <link rel="stylesheet" href="../less/brand.css">
+    <link rel="stylesheet" href="../less/brand_list.css">
+
+</head>
+<body style="padding-bottom: 60px" ng-app="">
+    <!--头部-->
+    <div ng-include="'commom/header.html'"></div>
+    <!--搜索框-->
+    <div ng-include="'commom/search_input.html'"></div>
+    <!--当前位置-->
+    <div ng-include="'commom/curr_position.html'"></div>
+
+    <!--主体部分-->
+    <section class="main">
+
+
+    </section>
+    <!--底部-->
+    <div ng-include="'commom/footer.html'"></div>
+
+    <!--下载慢慢买app入口-->
+    <div ng-include="'commom/app_entrance.html'"></div>
+
+    <!--AjaxLoading-->
+    <div ng-include="'commom/ajax_loading.html'"></div>
+</body>
+<script type="text/html" id="model-tpl1">
+    <div class="model">
+        <h3>平板电视哪个牌子好</h3>
+        <ul class="model-content">
+            {{each list as value}}
+            <li>
+                <a href="brand_list.html?brandTitleId={{value.brandTitleId}}" title='三星平板电视'>
+                    <em class="top {{sort($index+1)}}">{{$index+1}}</em>
+                    <div>
+                        <h4>{{value.brandName}}</h4>
+                        <p>{{value.brandInfo}}</p>
+                    </div>
+                    <i class="glyphicon glyphicon-menu-right"></i>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</script>
+<script type="text/html" id="model-tpl2">
+    <div class="model">
+        <h3>平板电视产品销量排行</h3>
+        <ul class="model-content pro_top10">
+            {{each list as value}}
+            <li>
+                <a href="bijia_details.html?brandTitleId={{value.brandTitleId}}" title=''>
+                    <div class="pic">{{#value.productImg}}</div>
+                    <div class="pro_infor">
+                        <p>{{value.productName}}</p>
+                        <div class="price">
+                            <span class="price_num">{{value.productPrice}}</span>
+                                <span class="star fr">
+                                    <em class="start4"></em>
+                                </span>
+                        </div>
+                        <div class="comment">
+                            <span class="baojia">{{value.productQuote}}&nbsp;&nbsp;</span>
+                            <span class="comment_num">{{value.productCom}}</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</script>
+<script type="text/html" id="model-tpl3">
+    <div class="model">
+        <h3>平板电视最新评论</h3>
+        <ul class="model-content comment_top10 pro_top10">
+            {{each list as value}}
+            <li comId={{value.comId}}>
+                <a href="bijia_details.html?brandTitleId={{value.brandTitleId}}" title=''>
+                    <div class="pic"><img src='../imgs/brand/{{$index}}.jpg' alt=""/></div>
+                    <div class="pro_infor">
+                        <p>康佳(KONKA) LED32E330C 32英寸 高清720P 普通LED液晶电视</p>
+                    </div>
+                </a>
+                <div class="comment_msg">
+                    <div class="name">
+                        <div class="name_box">
+                            <span class="tel">{{value.comName}}:</span>
+                                <span class="star fr">
+                                    <em class="start{{$index}}"></em>
+                                </span>
+                        </div>
+                        <span class="comment_time">{{value.comTime}}</span>
+                    </div>
+                    <p>{{value.comContent}}</p>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</script>
+<!--入口函数-->
+<script src="../lib/requirejs/require.min.js" data-main='../js/common/main.js'></script>
+</html>
